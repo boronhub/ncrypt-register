@@ -20,7 +20,6 @@ function insertRecord(req, res) {
   school.teacherName = req.body.tname;
   school.teacherEmail = req.body.temail;
   school.teacherPhone = req.body.tphone;
-  school.coinPart = req.body.coin;
   eventsToList = (v) => [].concat(v).map((name) => name);
   submittedEvents = eventsToList(req.body.events);
   allEvents = {
@@ -30,31 +29,34 @@ function insertRecord(req, res) {
     quizChecked: false,
   };
   submittedEvents.forEach((element) => {
-    switch (element) {
-      case "coin":
-        allEvents.coinChecked = true;
-        break;
-      case "crin":
-        allEvents.crinChecked = true;
-      case "pp":
-        allEvents.ppChecked = true;
-      case "quiz":
-        allEvents.quizChecked = true;
-      default:
-        break;
+    if (element === "coin") {
+      allEvents.coinChecked = true;
+    } else if (element === "crin") {
+      allEvents.crinChecked = true;
+    } else if (element === "prog") {
+      allEvents.ppChecked = true;
+    } else if (element === "quiz") {
+      allEvents.quizChecked = true;
     }
   });
   school.allEvents = allEvents;
-  school.crinPart = req.body.crin;
-  school.ppPart = req.body.pp;
-  school.quizPart = req.body.quiz;
+  school.coinPart = allEvents.coinChecked == true ? req.body.coin : ["n", "n"];
+  school.crinPart = allEvents.crinChecked == true ? req.body.crin : ["n", "n"];
+  school.ppPart = allEvents.ppChecked == true ? req.body.pp : ["n", "n"];
+  school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
   school.save((err, doc) => {
-    if (!err) res.redirect("register/thanks");
+    if (!err) res.render("register/thanks");
     else {
       if (err.name == "ValidationError") {
         handleValidationError(err, req.body);
         res.render("events/addEdit", {
           event: "nCrypt 2020 Interschool Registration",
+          fields: req.body,
+          check: allEvents,
+        });
+      } else if (err.name == "MongoError" && err.code == 11000) {
+        res.render("events/addEdit", {
+          event: "School Already Registered",
           fields: req.body,
           check: allEvents,
         });
@@ -86,11 +88,11 @@ function handleValidationError(err, body) {
       case "crinPart":
         body["crinPartError"] = err.errors[field].message;
         break;
-      case "quizPart":
-        body["quizPartError"] = err.errors[field].message;
-        break;
       case "ppPart":
         body["ppPartError"] = err.errors[field].message;
+        break;
+      case "quizPart":
+        body["quizPartError"] = err.errors[field].message;
         break;
       default:
         break;

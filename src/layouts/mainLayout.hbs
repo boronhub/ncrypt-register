@@ -35,6 +35,7 @@
     $('input[value="coin"]').on('change', function () {
       if (!this.checked) {
         $('.coin').hide()
+        $('input[name="coin"').attr('value', '')
       } else if (this.checked) {
         $('.coin').show()
       }
