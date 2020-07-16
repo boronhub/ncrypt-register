@@ -45,7 +45,7 @@ function insertRecord(req, res) {
   school.ppPart = allEvents.ppChecked == true ? req.body.pp : ["n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
   school.save((err, doc) => {
-    if (!err) res.render("register/thanks");
+    if (!err) res.redirect(`/register/${doc._id}`);
     else {
       if (err.name == "ValidationError") {
         handleValidationError(err, req.body);
@@ -100,16 +100,15 @@ function handleValidationError(err, body) {
   }
 }
 
-router.get("/thanks", (req, res) => {
-  School.find((err, docs) => {
-    if (!err) {
-      res.render("events/thanks", {
-        response: docs,
-      });
-    } else {
-      console.log("Error in retrieving response: " + err);
+router.get("/:id", (req, res) => {
+  School.findById(req.params.id,(err,doc)=>{
+    if (!err){
+      res.render("events/thanks",{
+        title:"School has been Registered!",
+        school:doc
+      })
     }
-  });
+  })
 });
 
 module.exports = router;
