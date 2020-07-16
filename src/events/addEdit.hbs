@@ -1,0 +1,43 @@
+<h3>{{event}}</h3>
+<form autocomplete="off" action="/register" method="POST">
+  <input type="text" placeholder="School Name" name="sname" value="{{fields.sname}}">
+  <p style="color:red"> {{fields.schoolNameError}} </p>
+  <input type="text" placeholder="Teacher Name" name="tname" value="{{fields.tname}}">
+  <p style="color:red"> {{fields.teacherNameError}} </p>
+  <input type="text" placeholder="Teacher Email" name="temail" value="{{fields.temail}}">
+  <p style="color:red"> {{fields.teacherEmailError}} </p>
+  <input type="text" placeholder="Teacher Phone Number" name="tphone" value="{{fields.tphone}}">
+  <p style="color:red"> {{fields.teacherPhoneError}} </p>
+  <div>
+    <input type="checkbox" name="events" value="coin" {{#if check.coinChecked}}checked{{/if}}> Code-in
+    <label>
+      <input type="checkbox" name="events" value="crin" {{#if check.crinChecked}}checked{{/if}}> Create-in</label>
+    <label>
+      <input type="checkbox" name="events" value="prog" {{#if check.ppChecked}}checked{{/if}}> Programming</label>
+    <label>
+      <input type="checkbox" name="events" value="quiz" {{#if check.quizChecked}}checked{{/if}}> Quiz</label>
+  </div>
+  <div class="coin selectt" style="{{#if check.coinChecked}}display:block{{else}}display:none{{/if}}">
+    <input type="text" placeholder="Code-in Participant 1" name="coin" value="{{fields.coin.[0]}}">
+    <input type="text" placeholder="Code-in Participant 2" name="coin" value="{{fields.coin.[1]}}">
+    {{#if check.coinChecked}}<p style="color:red"> {{fields.coinPartError}} </p>{{/if}}
+  </div>
+  <div class="crin selectt" style="{{#if check.coinChecked}}display:block{{else}}display:none{{/if}}">
+    <input type="text" placeholder="Create-in Participant 1" name="crin" value="{{fields.crin.[0]}}">
+    <input type="text" placeholder="Create-in Participant 2" name="crin" value="{{fields.crin.[1]}}">
+    <p style="color:red"> {{fields.crinPartError}} </p>
+
+  </div>
+  <div class="prog selectt">
+    <input type="text" placeholder="Programming Participant 1" name="pp" value="{{fields.pp.[0]}}">
+    <input type="text" placeholder="Programming Participant 2" name="pp" value="{{fields.pp.[1]}}">
+    <p style="color:red"> {{fields.ppPartError}} </p>
+
+  </div>
+  <div class="quiz selectt">
+    <input type="text" placeholder="Quiz Participant 1" name="quiz" value="{{fields.quiz.[0]}}">
+    <input type="text" placeholder="Quiz Participant 2" name="quiz" value="{{fields.quiz.[1]}}">
+    <p style="color:red"> {{fields.quizPartError}} </p>
+  </div>
+  <button type="submit">Submit</button>
+</form>

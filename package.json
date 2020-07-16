@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/divided7/ncrypt-register/issues"
   },
-  "homepage": "https://github.com/divided7/ncrypt-register#readme"
+  "homepage": "https://github.com/divided7/ncrypt-register#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.0.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.24",
+    "nodemon": "^2.0.4"
+  }
 }
