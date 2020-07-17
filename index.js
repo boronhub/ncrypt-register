@@ -6,7 +6,7 @@ const path = require("path");
 const exphb = require("express-handlebars");
 const bodyparser = require("body-parser");
 
-const port = process.env.PORT|| 3000;
+const port = process.env.PORT  || 3000;
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("views", path.join(__dirname, "/src/"));
 
@@ -28,7 +28,7 @@ app.engine(
 
 app.set("view engine", "hbs");
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
