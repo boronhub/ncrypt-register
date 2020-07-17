@@ -45,7 +45,7 @@ function insertRecord(req, res) {
   school.save((err, doc) => {
     if (!err) {
       console.log(err, doc);
-      res.redirect(`/register/${doc._id}`);
+      res.redirect(`/${doc._id}`);
     } else {
       if (err.name == "ValidationError") {
         handleValidationError(err, req.body);

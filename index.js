@@ -32,4 +32,4 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
-app.use("/register", schoolController);
+app.use("/", schoolController);
