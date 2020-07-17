@@ -1,6 +1,71 @@
 <h1>
   {{title}}
 </h1>
-<p>
-  {{school}}
-</p>
+<table>
+  <tr>
+    <th>
+      School Name
+    </th>
+    <th>
+      {{school.schoolName}}
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Teacher in-charge Details
+    </th>
+    <th>
+      {{school.teacherName}}
+    </th>
+    <th>
+      {{school.teacherEmail}}
+    </th>
+    <th>
+      {{school.teacherPhone}}
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Create-in Participants
+    </th>
+    <td>
+      {{school.crinPart.[0]}}
+    </td>
+    <td>
+      {{school.crinPart.[1]}}
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Programming Participants
+    </th>
+    <td>
+      {{school.ppPart.[0]}}
+    </td>
+    <td>
+      {{school.ppPart.[1]}}
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Quiz Participants
+    </th>
+    <td>
+      {{school.quixPart.[0]}}
+    </td>
+    <td>
+      {{school.quizPart.[1]}}
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Code-in Participants
+    </th>
+    <td>
+      {{school.coinPart.[0]}}
+    </td>
+    <td>
+      {{school.coinPart.[1]}}
+    </td>
+  </tr>
+</table>

@@ -4,14 +4,11 @@ const mongoose = require("mongoose");
 const School = mongoose.model("School");
 
 router.get("/", (req, res) => {
-  res.render("events/addEdit", {
-    event: "nCrypt 2020 Interschool Registration",
-  });
+  res.render("events/addEdit");
 });
 
 router.post("/", (req, res) => {
   insertRecord(req, res);
-  // console.log(req.body)
 });
 
 function insertRecord(req, res) {
@@ -39,30 +36,37 @@ function insertRecord(req, res) {
       allEvents.quizChecked = true;
     }
   });
-  school.allEvents = allEvents;
+  school.submittedEvents = submittedEvents;
   school.coinPart = allEvents.coinChecked == true ? req.body.coin : ["n", "n"];
   school.crinPart = allEvents.crinChecked == true ? req.body.crin : ["n", "n"];
   school.ppPart = allEvents.ppChecked == true ? req.body.pp : ["n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
+  console.log(school);
   school.save((err, doc) => {
-    if (!err) res.redirect(`/register/${doc._id}`);
-    else {
+    if (!err) {
+      console.log(err, doc);
+      res.redirect(`/register/${doc._id}`);
+    } else {
       if (err.name == "ValidationError") {
         handleValidationError(err, req.body);
         res.render("events/addEdit", {
-          event: "nCrypt 2020 Interschool Registration",
           fields: req.body,
           check: allEvents,
         });
       } else if (err.name == "MongoError" && err.code == 11000) {
         res.render("events/addEdit", {
-          event: "School Already Registered",
+          oyehoye: "School Already Registered!",
           fields: req.body,
           check: allEvents,
         });
       } else {
-        console.log("Error registering school " + err);
+        console.log("Error registering school " + err.name);
       }
+    }
+    if (doc) {
+      console.log("doc saved!");
+    } else {
+      console.log("doc not saved");
     }
   });
 }
@@ -94,6 +98,9 @@ function handleValidationError(err, body) {
       case "quizPart":
         body["quizPartError"] = err.errors[field].message;
         break;
+      case "submittedEvents":
+        body["zeroEventsError"] = err.errors[field].message;
+        break;
       default:
         break;
     }
@@ -101,14 +108,14 @@ function handleValidationError(err, body) {
 }
 
 router.get("/:id", (req, res) => {
-  School.findById(req.params.id,(err,doc)=>{
-    if (!err){
-      res.render("events/thanks",{
-        title:"School has been Registered!",
-        school:doc
-      })
+  School.findById(req.params.id, (err, doc) => {
+    if (!err) {
+      res.render("events/thanks", {
+        title: "School has been Registered!",
+        school: doc,
+      });
     }
-  })
+  }).lean();
 });
 
 module.exports = router;

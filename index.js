@@ -1,12 +1,13 @@
 require("./models/db");
 const schoolController = require("./controllers/schoolController");
 const app = require("express")();
+const express = require("express");
 const path = require("path");
 const exphb = require("express-handlebars");
 const bodyparser = require("body-parser");
 
 const port = 3000;
-
+app.use(express.static(path.join(__dirname, "/public")));
 app.set("views", path.join(__dirname, "/src/"));
 
 app.use(

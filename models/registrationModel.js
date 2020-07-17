@@ -4,6 +4,7 @@ var schoolSchema = new mongoose.Schema({
   schoolName: {
     type: String,
     required: "School Name is required.",
+    unique:true
   },
   teacherName: {
     type: String,
@@ -14,7 +15,7 @@ var schoolSchema = new mongoose.Schema({
     required: "Teacher's Email is required.",
   },
   teacherPhone: {
-    type: Number,
+    type: String,
     required: "Teacher's Phone Number is required.",
   },
   coinPart: [
@@ -37,7 +38,16 @@ var schoolSchema = new mongoose.Schema({
       type: String,
     },
   ],
+  submittedEvents: [
+    {
+      type: String,
+    },
+  ],
 });
+
+schoolSchema.path("submittedEvents").validate((list) => {
+  return list[0]!==undefined
+}, "Please Register for atleast one event");
 
 schoolSchema.path("coinPart").validate((list) => {
   list[0] = list[0].trim();
