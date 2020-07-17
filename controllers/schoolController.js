@@ -13,10 +13,13 @@ router.post("/", (req, res) => {
 
 function insertRecord(req, res) {
   var school = new School();
-  school.schoolName = req.body.sname;
+  school.schoolName = req.body.sname.toLowerCase();
   school.teacherName = req.body.tname;
   school.teacherEmail = req.body.temail;
   school.teacherPhone = req.body.tphone;
+  school.studentName = req.body.stname;
+  school.studentEmail = req.body.stemail;
+  school.studentPhone = req.body.stphone;
   eventsToList = (v) => [].concat(v).map((name) => name);
   submittedEvents = eventsToList(req.body.events);
   allEvents = {
@@ -41,10 +44,8 @@ function insertRecord(req, res) {
   school.crinPart = allEvents.crinChecked == true ? req.body.crin : ["n", "n"];
   school.ppPart = allEvents.ppChecked == true ? req.body.pp : ["n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
-  console.log(school);
   school.save((err, doc) => {
     if (!err) {
-      console.log(err, doc);
       res.redirect(`/${doc._id}`);
     } else {
       if (err.name == "ValidationError") {
@@ -85,6 +86,15 @@ function handleValidationError(err, body) {
         break;
       case "teacherPhone":
         body["teacherPhoneError"] = err.errors[field].message;
+        break;
+      case "studentName":
+        body["studentNameError"] = err.errors[field].message;
+        break;
+      case "studentEmail":
+        body["studentEmailError"] = err.errors[field].message;
+        break;
+      case "studentPhone":
+        body["studentPhoneError"] = err.errors[field].message;
         break;
       case "coinPart":
         body["coinPartError"] = err.errors[field].message;

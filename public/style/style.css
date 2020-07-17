@@ -6,9 +6,145 @@
   width: 60%;
   background: black;
 }
+h1 {
+  color: white;
+  /* Register */
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 87px;
+
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+.container {
+  margin: 5% 10%;
+}
+h2 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  width: 500px;
+  color: #ffffff;
+}
 body {
-  background-color: white;
+  background-color: #1f1f1f;
+  font-family: "Inter", sans-serif;
+}
+a {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration-line: underline;
+
+  color: #f10000;
+}
+p {
+  color: white;
+}
+.oneinp input {
+  width: 100%;
+}
+.oneinp {
+  display: inline-block;
+  width: 100%;
+}
+.twoinp {
+  width: 100%;
+}
+.twoinp .first,
+.twoinp .second {
+  display: inline-block;
+  width: 48%;
+}
+.second {
+  float: right;
+}
+.twoinp .first input,
+.twoinp .second input {
+  width: 100%;
 }
 label {
   margin-right: 20px;
+}
+input[type="text"] {
+  background: #343434;
+  border-radius: 5px;
+  outline: none;
+  height: 40px;
+  padding: 2px 10px;
+  border: none;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #e3e3e3;
+}
+.error {
+  float: right;
+}
+.dabba {
+  position: relative;
+  display: inline-block;
+  width: 18%;
+  height: 200px;
+  background-color: #343434;
+  height: 70px;
+  background: #343434;
+  border-radius: 9px;
+  text-align: center;
+  cursor: pointer;
+}
+.dabba:not(:first-child) {
+  margin-left: 1%;
+}
+.row {
+  text-align: center;
+  margin-top: 5%;
+}
+.dabba input {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.dabba input:checked {
+  background-color: #f10000;
+}
+.dabba p {
+  margin-top: 35px;
+  transform: translateY(-50%);
+}
+button {
+  margin-top: 5%;
+
+  background: #f10000;
+  border-radius: 6px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #ffffff;
+  border: none;
+  padding: 20px 40px;
+  float: right;
+  margin-bottom: 5%;
 }

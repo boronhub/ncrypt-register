@@ -30,3 +30,11 @@ $('input[value="quiz"]').on("change", function () {
     $(".quiz").show();
   }
 });
+$(".crinbox").click(function () {
+  var cbox = $('input[value="crin"]');
+  if (!cbox.checked) {
+    cbox.attr("checked", true);
+  } else if (cbox.checked) {
+    cbox.attr("checked", false);
+  }
+});
