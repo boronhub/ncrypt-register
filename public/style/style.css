@@ -5,6 +5,7 @@
   margin: 0% 10%;
   text-align: center;
 }
+
 .selectt input {
   width: 100%;
 }
@@ -100,7 +101,7 @@ input[type="text"] {
   border-radius: 5px;
   outline: none;
   height: 40px;
-  padding: 2px 10px;
+  padding: 0px 10px;
   border: none;
   font-family: Inter;
   font-style: normal;
@@ -169,4 +170,40 @@ button {
   padding: 20px 40px;
   float: right;
   margin-bottom: 5%;
+}
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 16px;
+    width: 100%;
+  }
+  .twoinp .first,
+  .twoinp .second {
+    display: inline-block;
+    width: 100%;
+  }
+  .dabba {
+    width: 48%;
+    margin-top: 5%;
+  }
+  .dabba:not(:first-child) {
+    margin-left: 0%;
+  }
+  .dabba input {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 1.1em;
+    height: 1.1em;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    outline: none;
+    pointer-events: none;
+  }
+  button {
+    margin-top: 20%;
+  }
 }
