@@ -70,8 +70,14 @@ schoolSchema.path("coinPart").validate((list) => {
 schoolSchema.path("crinPart").validate((list) => {
   list[0] = list[0].trim();
   list[1] = list[1].trim();
-  return list[0] !== "" && list[1] !== "";
-}, "Please Register atleast two participants for create-in.");
+  list[2] = list[2].trim();
+  list[3] = list[3].trim();
+  if (list[2] === "") {
+    return list[0] !== "" && list[1] !== "";
+  }else if (typeof list[2] !== ""){
+    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "" ;
+  }
+}, "Please Provide All the details");
 
 schoolSchema.path("ppPart").validate((list) => {
   list[0] = list[0].trim();

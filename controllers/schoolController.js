@@ -41,7 +41,7 @@ function insertRecord(req, res) {
   });
   school.submittedEvents = submittedEvents;
   school.coinPart = allEvents.coinChecked == true ? req.body.coin : ["n", "n"];
-  school.crinPart = allEvents.crinChecked == true ? req.body.crin : ["n", "n"];
+  school.crinPart = allEvents.crinChecked == true ? req.body.crin : ["n", "n","n","n"];
   school.ppPart = allEvents.ppChecked == true ? req.body.pp : ["n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
   school.save((err, doc) => {

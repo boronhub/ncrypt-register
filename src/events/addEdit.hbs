@@ -76,13 +76,24 @@
       {{/if}}{{/if}}
     </div>
     <div class="crin selectt" style="{{#if check.crinChecked}}display:block{{else}}display:none{{/if}}">
-      <input type="text" name="crin" value="{{fields.crin.[0]}}">
-      <input type="text" name="crin" value="{{fields.crin.[1]}}">
-      {{#if check.crinChecked}}{{#if fields.crinPartError}}<p style="color:red" class="error">
-        {{fields.crinPartError}}
-      </p>
-      {{/if}}{{/if}}
-
+      <div class="head">
+        <h1>Create-in</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <p>Participant 1</p>
+        <input type="text" name="crin" value="{{fields.crin.[0]}}">
+        <p>Class</p>
+        <input type="text" name="crin" value="{{fields.crin.[1]}}">
+        <p>Participant 2</p>
+        <input type="text" name="crin" value="{{fields.crin.[2]}}">
+        <p>Class</p>
+        <input type="text" name="crin" value="{{fields.crin.[3]}}">
+        {{#if check.crinChecked}}{{#if fields.crinPartError}}<p style="color:red" class="error">
+          {{fields.crinPartError}}
+        </p>
+        {{/if}}{{/if}}
+      </div>
     </div>
     <div class="prog selectt" style="{{#if check.ppChecked}}display:block{{else}}display:none{{/if}}">
       <input type="text" name="pp" value="{{fields.pp.[0]}}">

@@ -8,7 +8,7 @@ $(".crinbox").click(function () {
     $(".crin").show();
   }
 });
-$(".quizbox").click(function () {
+$(".quizbox").click(function () { 
   var cbox = $('input[value="quiz"]');
   cbox.prop("checked", !cbox.prop("checked"));
   if (!cbox.prop("checked")) {
