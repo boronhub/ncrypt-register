@@ -30,7 +30,7 @@ var schoolSchema = new mongoose.Schema({
     type: String,
     required: "Required.",
   },
-  coinPart: [
+  gamePart: [
     {
       type: String,
     },
@@ -61,29 +61,57 @@ schoolSchema.path("submittedEvents").validate((list) => {
   return list[0] !== undefined;
 }, "Please Register for atleast one event");
 
-schoolSchema.path("coinPart").validate((list) => {
-  list[0] = list[0].trim();
-  list[1] = list[1].trim();
-  return list[0] !== "" && list[1] !== "";
-}, "Please Register atleast two participants for code-in.");
-
-schoolSchema.path("crinPart").validate((list) => {
+schoolSchema.path("gamePart").validate((list) => {
   list[0] = list[0].trim();
   list[1] = list[1].trim();
   list[2] = list[2].trim();
   list[3] = list[3].trim();
   if (list[2] === "") {
     return list[0] !== "" && list[1] !== "";
-  }else if (typeof list[2] !== ""){
-    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "" ;
+  } else if (list[2] !== "") {
+    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "";
   }
-}, "Please Provide All the details");
+}, "Please Provide participant details or leave empty");
+
+schoolSchema.path("crinPart").validate((list) => {
+  list[0] = list[0].trim();
+  list[1] = list[1].trim();
+  list[2] = list[2].trim();
+  list[3] = list[3].trim();
+  list[4] = list[4].trim();
+  list[5] = list[5].trim();
+  if (list[2] === "") {
+    return list[0] !== "" && list[1] !== "";
+  }
+  if (list[4] === "") {
+    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "";
+  }
+  if (list[4] !== "") {
+    return (
+      list[0] !== "" &&
+      list[1] !== "" &&
+      list[2] !== "" &&
+      list[3] !== "" &&
+      list[4] !== "" &&
+      list[5] !== ""
+    );
+  }
+}, "Please Provide participant details or leave empty");
 
 schoolSchema.path("ppPart").validate((list) => {
   list[0] = list[0].trim();
   list[1] = list[1].trim();
-  return list[0] !== "" && list[1] !== "";
-}, "Please Register atleast two participants for Programming.");
+  list[2] = list[2].trim();
+  list[3] = list[3].trim();
+  if (list[1] === "") {
+    return list[0] !== "";
+  }
+  if (list[2] === "") {
+    return list[0] !== "" && list[1] !== "";
+  } else if (list[2] !== "") {
+    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "";
+  }
+}, "Please Provide participant details or leave empty");
 
 schoolSchema.path("quizPart").validate((list) => {
   list[0] = list[0].trim();

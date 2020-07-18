@@ -18,6 +18,16 @@ $(".quizbox").click(function () {
     $(".quiz").show();
   }
 });
+$(".gamebox").click(function () {
+  var cbox = $('input[value="game"]');
+  cbox.prop("checked", !cbox.prop("checked"));
+  if (!cbox.prop("checked")) {
+    $(".game").hide();
+    $('input[name="game"').attr("value", "");
+  } else if (cbox.prop("checked")) {
+    $(".game").show();
+  }
+});
 $(".ppbox").click(function () {
   var cbox = $('input[value="prog"]');
   cbox.prop("checked", !cbox.prop("checked"));
@@ -26,5 +36,13 @@ $(".ppbox").click(function () {
     $('input[name="pp"').attr("value", "");
   } else if (cbox.prop("checked")) {
     $(".prog").show();
+  }
+});
+$(".hider").click(function () {
+  $(".firstpart").toggle();
+  if ($(".firstpart").is(":hidden")) {
+    $(this).html("Show School Details");
+  } else if ($(".firstpart").is(":visible")) {
+    $(this).html("Hide School Details");
   }
 });

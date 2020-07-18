@@ -1,3 +1,4 @@
+<img src="/img/logo.png" alt="Logo" height="50" width="150">
 <div class="container">
   <h1>Register</h1>
   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consectetur lobortis id sit <a
@@ -6,107 +7,187 @@
   <h3>{{oyehoye}}</h3>
   <h3>{{fields.zeroEventsError}}</h3>
   <form autocomplete="off" action="/" method="POST">
-    <div class="oneinp">
-      <p>School Name</p>
-      <input type="text" name="sname" value="{{fields.sname}}">
-      <p style="color:red" class="error"> {{fields.schoolNameError}} </p>
-    </div>
-    <div class="twoinp">
-      <div class="first">
-        <p>Teacher in-charge Name</p>
-        <input type="text" name="tname" value="{{fields.tname}}">
-        <p style="color:red" class="error"> {{fields.teacherNameError}} </p>
+    <div class="firstpart">
+      <div class="oneinp">
+        <p>School Name</p>
+        <input type="text" name="sname" value="{{fields.sname}}">
+        <p style="color:red" class="error"> {{fields.schoolNameError}} </p>
       </div>
-      <div class="second">
-        <p>Teacher in-charge Phone Number</p>
-        <input type="text" name="tphone" value="{{fields.tphone}}">
-        <p style="color:red" class="error"> {{fields.teacherPhoneError}} </p>
+      <div class="twoinp">
+        <div class="first">
+          <p>Teacher in-charge Name</p>
+          <input type="text" name="tname" value="{{fields.tname}}">
+          <p style="color:red" class="error"> {{fields.teacherNameError}} </p>
+        </div>
+        <div class="second">
+          <p>Teacher in-charge Phone Number</p>
+          <input type="text" name="tphone" value="{{fields.tphone}}">
+          <p style="color:red" class="error"> {{fields.teacherPhoneError}} </p>
+        </div>
+      </div>
+      <div class="oneinp">
+        <p>Teacher in-charge E-mail ID</p>
+        <input type="text" name="temail" value="{{fields.temail}}">
+        <p style="color:red" class="error"> {{fields.teacherEmailError}} </p>
+      </div>
+      <div class="twoinp">
+        <div class="first">
+          <p>Student in-charge Name</p>
+          <input type="text" name="stname" value="{{fields.stname}}">
+          <p style="color:red" class="error"> {{fields.studentNameError}} </p>
+        </div>
+        <div class="second">
+          <p>Student in-charge Phone Number</p>
+          <input type="text" name="stphone" value="{{fields.stphone}}">
+          <p style="color:red" class="error"> {{fields.studentPhoneError}} </p>
+        </div>
+      </div>
+      <div class="oneinp">
+        <p>Student in-charge E-mail ID</p>
+        <input type="text" name="stemail" value="{{fields.stemail}}">
+        <p style="color:red" class="error"> {{fields.studentEmailError}} </p>
       </div>
     </div>
-    <div class="oneinp">
-      <p>Teacher in-charge E-mail ID</p>
-      <input type="text" name="temail" value="{{fields.temail}}">
-      <p style="color:red" class="error"> {{fields.teacherEmailError}} </p>
-    </div>
-    <div class="twoinp">
-      <div class="first">
-        <p>Student in-charge Name</p>
-        <input type="text" name="stname" value="{{fields.stname}}">
-        <p style="color:red" class="error"> {{fields.studentNameError}} </p>
-      </div>
-      <div class="second">
-        <p>Student in-charge Phone Number</p>
-        <input type="text" name="stphone" value="{{fields.stphone}}">
-        <p style="color:red" class="error"> {{fields.studentPhoneError}} </p>
-      </div>
-    </div>
-    <div class="oneinp">
-      <p>Student in-charge E-mail ID</p>
-      <input type="text" name="stemail" value="{{fields.stemail}}">
-      <p style="color:red" class="error"> {{fields.studentEmailError}} </p>
-    </div>
+    <p class="hider">Hide School Details</p>
     <div class="row">
-      <div class="dabba">
-        <input type="checkbox" name="events" value="coin" {{#if check.coinChecked}}checked{{/if}}>
-        <p> Code-in </p>
-      </div>
       <div class="dabba crinbox">
         <input type="checkbox" name="events" value="crin" {{#if check.crinChecked}}checked{{/if}}>
         <p> Create-in </p>
       </div>
+
       <div class="dabba ppbox">
         <input type="checkbox" name="events" value="prog" {{#if check.ppChecked}}checked{{/if}}>
         <p> Programming</p>
       </div>
-      <div class="dabba quizbox">
-        <input type="checkbox" name="events" value="quiz" {{#if check.quizChecked}}checked{{/if}}>
-        <p> Quiz</p>
+      <div class="dabba gamebox">
+        <input type="checkbox" name="events" value="game" {{#if check.gameChecked}}checked{{/if}}>
+        <p> Gaming</p>
       </div>
       <div class="dabba">
         <input type="checkbox" name="events" value="quiz" {{#if check.quizChecked}}checked{{/if}}>
         <p> Quiz</p>
       </div>
+      <div class="dabba">
+        <input type="checkbox" name="events" value="coin" {{#if check.coinChecked}}checked{{/if}}>
+
+        <p> Code-in </p>
+      </div>
     </div>
-    <div class="coin selectt" style="{{#if check.coinChecked}}display:block{{else}}display:none{{/if}}">
-      <input type="text" name="coin" value="{{fields.coin.[0]}}">
-      <input type="text" name="coin" value="{{fields.coin.[1]}}">
-      {{#if check.coinChecked}}{{#if fields.coinPartError}}<p style="color:red" class="error">
-        {{fields.coinPartError}}
-      </p>
-      {{/if}}{{/if}}
-    </div>
+
     <div class="crin selectt" style="{{#if check.crinChecked}}display:block{{else}}display:none{{/if}}">
       <div class="head">
         <h1>Create-in</h1>
         <h2>Classes IX-XII</h2>
       </div>
       <div class="inps">
-        <p>Participant 1</p>
-        <input type="text" name="crin" value="{{fields.crin.[0]}}">
-        <p>Class</p>
-        <input type="text" name="crin" value="{{fields.crin.[1]}}">
-        <p>Participant 2</p>
-        <input type="text" name="crin" value="{{fields.crin.[2]}}">
-        <p>Class</p>
-        <input type="text" name="crin" value="{{fields.crin.[3]}}">
-        {{#if check.crinChecked}}{{#if fields.crinPartError}}<p style="color:red" class="error">
-          {{fields.crinPartError}}
-        </p>
-        {{/if}}{{/if}}
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="crin" value="{{fields.crin.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="crin" value="{{fields.crin.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="crin" value="{{fields.crin.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="crin" value="{{fields.crin.[3]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 3</p>
+            <input type="text" name="crin" value="{{fields.crin.[4]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="crin" value="{{fields.crin.[5]}}">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="prog selectt" style="{{#if check.ppChecked}}display:block{{else}}display:none{{/if}}">
-      <input type="text" name="pp" value="{{fields.pp.[0]}}">
-      <input type="text" name="pp" value="{{fields.pp.[1]}}">
-      {{#if check.ppChecked}}{{#if fields.ppPartError}}<p style="color:red" class="error"> {{fields.ppPartError}} </p>
+      {{#if check.crinChecked}}{{#if fields.crinPartError}}<p style="color:red" class="error">
+        {{fields.crinPartError}}
+      </p>
       {{/if}}{{/if}}
-
     </div>
-    <div class="quiz selectt" style="{{#if check.quizChecked}}display:block{{else}}display:none{{/if}}">
-      <input type="text" name="quiz" value="{{fields.quiz.[0]}}">
-      <input type="text" name="quiz" value="{{fields.quiz.[1]}}">
-      {{#if check.quizChecked}}{{#if fields.quizPartError}}<p style="color:red" class="error">
-        {{fields.quizPartError}}
+    <div class="prog selectt"
+      style="{{#if check.ppChecked}}display:block{{else}}display:none{{/if}};transform:translateY(15%)">
+      <div class="head">
+        <h1>Programming</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="crin" value="{{fields.pp.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="crin" value="{{fields.pp.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="crin" value="{{fields.pp.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="crin" value="{{fields.pp.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.ppChecked}}{{#if fields.ppPartError}}<p style="color:red" class="error">
+        {{fields.ppPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+
+    <div class="game selectt"
+      style="{{#if check.gameChecked}}display:block{{else}}display:none{{/if}};transform:translateY(45%)">
+      <div class="head">
+        <h1>Gaming</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="game" value="{{fields.game.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="game" value="{{fields.game.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="game" value="{{fields.game.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="game" value="{{fields.game.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.gameChecked}}{{#if fields.gamePartError}}<p style="color:red" class="error">
+        {{fields.gamePartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+    <div class="coin selectt" style="{{#if check.coinChecked}}display:block{{else}}display:none{{/if}}">
+      <input type="text" name="coin" value="{{fields.coin.[0]}}">
+      <input type="text" name="coin" value="{{fields.coin.[1]}}">
+      {{#if check.coinChecked}}{{#if fields.coinPartError}}<p style="color:red" class="error">
+        {{fields.coinPartError}}
       </p>
       {{/if}}{{/if}}
     </div>

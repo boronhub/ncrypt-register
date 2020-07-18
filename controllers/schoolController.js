@@ -37,12 +37,21 @@ function insertRecord(req, res) {
       allEvents.ppChecked = true;
     } else if (element === "quiz") {
       allEvents.quizChecked = true;
+    } else if (element === "game") {
+      allEvents.gameChecked = true;
     }
   });
   school.submittedEvents = submittedEvents;
   school.coinPart = allEvents.coinChecked == true ? req.body.coin : ["n", "n"];
-  school.crinPart = allEvents.crinChecked == true ? req.body.crin : ["n", "n","n","n"];
-  school.ppPart = allEvents.ppChecked == true ? req.body.pp : ["n", "n"];
+  school.crinPart =
+    allEvents.crinChecked == true
+      ? req.body.crin
+      : ["n", "n", "n", "n", "n", "n"];
+  school.ppPart =
+    allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n"];
+  school.gamePart =
+    allEvents.gameChecked == true ? req.body.game : ["n", "n", "n", "n"];
+
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
   school.save((err, doc) => {
     if (!err) {

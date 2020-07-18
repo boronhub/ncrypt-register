@@ -1,11 +1,39 @@
+img {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+}
 .selectt {
   color: #fff;
   padding: 0px;
   width: 80%;
-  margin: 0% 10%;
+  margin: auto;
   text-align: center;
 }
-
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f10000;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 10px 150px #111;
+  border-radius: 2px;
+}
+::selection {
+  background-color: red;
+  color: #fff;
+}
+.hider {
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  background-color: #343434;
+  padding: 10px;
+  margin-left: 0%;
+}
 .selectt input {
   width: 100%;
 }
@@ -43,7 +71,7 @@ h1 {
 }
 
 .container {
-  margin: 5% 10%;
+  margin: 8% 10%;
 }
 h2 {
   font-family: Inter;
@@ -81,18 +109,37 @@ p {
 .twoinp {
   width: 100%;
 }
+.twoinpp {
+  width: 100%;
+}
 .twoinp .first,
 .twoinp .second {
   display: inline-block;
   width: 48%;
 }
+.twoinpp .firstt {
+  width: 80%;
+  float: left;
+}
+.twoinpp .secondd {
+  width: 10%;
+  float: right;
+}
 .second {
+  float: right;
+}
+.secondd {
   float: right;
 }
 .twoinp .first input,
 .twoinp .second input {
   width: 100%;
 }
+.twoinpp .firstt input,
+.twoinpp .secondd input {
+  width: 100%;
+}
+
 label {
   margin-right: 20px;
 }
@@ -112,7 +159,9 @@ input[type="text"] {
   color: #e3e3e3;
 }
 .error {
-  float: right;
+  margin-top: 30px !important;
+  width: 100%;
+  text-align: start;
 }
 .dabba {
   position: relative;
@@ -137,13 +186,23 @@ input[type="text"] {
   position: absolute;
   top: 5px;
   right: 5px;
-  width: 1.3em;
-  height: 1.3em;
+  width: 1.4em;
+  height: 1.4em;
   background-color: white;
   border-radius: 50%;
   -webkit-appearance: none;
   outline: none;
   pointer-events: none;
+}
+.dabba i {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 16px;
+  -webkit-appearance: none;
+  outline: none;
+  pointer-events: none;
+  color: white;
 }
 .dabba input:checked {
   background-color: #f10000;
@@ -153,18 +212,16 @@ input[type="text"] {
   transform: translateY(-50%);
 }
 button {
-  margin-top: 5%;
-
+  margin-top: 10%;
   background: #f10000;
   border-radius: 6px;
-
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-
+  display: block;
   color: #ffffff;
   border: none;
   padding: 20px 40px;
@@ -205,5 +262,22 @@ button {
   }
   button {
     margin-top: 20%;
+  }
+  .selectt {
+    width: 100%;
+    margin: 0px;
+  }
+  .container {
+    margin: 5% 12% 10% 5%;
+  }
+  .row {
+    margin-left: 5%;
+  }
+  .head h1 {
+    line-height: 40px;
+    transform: translateX(-3px);
+  }
+  .head h2 {
+    margin-left: 0px;
   }
 }
