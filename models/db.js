@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const MONGODB_URI =
-  "mongodb+srv://divi:divi@registrations.010fn.mongodb.net/registrations?retryWrites=true&w=majority";
+require("dotenv").config();
+const MONGODB_URI = process.env.MONGO_URI;
 require("./registrationModel");
 
 try {

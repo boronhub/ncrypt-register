@@ -72,7 +72,7 @@ function insertRecord(req, res) {
       res.redirect(`/${doc._id}`);
     } else {
       if (err.name == "ValidationError") {
-        console.log(req.body);
+        console.log(req.body);  
         handleValidationError(err, req.body);
         res.render("events/addEdit", {
           fields: req.body,
