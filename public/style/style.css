@@ -8,6 +8,7 @@ img {
   color: #fff;
   padding: 0px;
   width: 80%;
+  min-height: 25vh;
   margin: auto;
   text-align: center;
 }
@@ -174,13 +175,17 @@ input[type="text"] {
   border-radius: 9px;
   text-align: center;
   cursor: pointer;
+  margin-top: 2%;
 }
 .dabba:not(:first-child) {
   margin-left: 1%;
 }
+.dabba:nth-child(6) {
+  margin-left: 0%;
+}
 .row {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 0%;
 }
 .dabba input {
   position: absolute;
@@ -229,6 +234,10 @@ button {
   margin-bottom: 5%;
 }
 @media only screen and (max-width: 1000px) {
+  button {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
   h1 {
     font-size: 36px;
   }
@@ -269,6 +278,7 @@ button {
   }
   .container {
     margin: 5% 12% 10% 5%;
+    padding-top: 15%;
   }
   .row {
     margin-left: 5%;

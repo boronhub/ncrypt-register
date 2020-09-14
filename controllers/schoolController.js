@@ -22,12 +22,7 @@ function insertRecord(req, res) {
   school.studentPhone = req.body.stphone;
   eventsToList = (v) => [].concat(v).map((name) => name);
   submittedEvents = eventsToList(req.body.events);
-  allEvents = {
-    coinChecked: false,
-    crinChecked: false,
-    ppChecked: false,
-    quizChecked: false,
-  };
+  allEvents = {};
   submittedEvents.forEach((element) => {
     if (element === "coin") {
       allEvents.coinChecked = true;
@@ -39,6 +34,16 @@ function insertRecord(req, res) {
       allEvents.quizChecked = true;
     } else if (element === "game") {
       allEvents.gameChecked = true;
+    } else if (element === "surp") {
+      allEvents.surpChecked = true;
+    } else if (element === "film") {
+      allEvents.filmChecked = true;
+    } else if (element === "photo") {
+      allEvents.photoChecked = true;
+    } else if (element === "ardu") {
+      allEvents.arduChecked = true;
+    } else if (element === "am") {
+      allEvents.amChecked = true;
     }
   });
   school.submittedEvents = submittedEvents;
@@ -51,13 +56,23 @@ function insertRecord(req, res) {
     allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n"];
   school.gamePart =
     allEvents.gameChecked == true ? req.body.game : ["n", "n", "n", "n"];
-
+  school.surpPart =
+    allEvents.surpChecked == true ? req.body.surp : ["n", "n", "n", "n"];
+  school.filmPart =
+    allEvents.filmChecked == true ? req.body.film : ["n", "n", "n", "n"];
+  school.photoPart =
+    allEvents.photoChecked == true ? req.body.photo : ["n", "n", "n", "n"];
+  school.arduPart =
+    allEvents.arduChecked == true ? req.body.ardu : ["n", "n", "n", "n"];
+  school.amPart =
+    allEvents.amChecked == true ? req.body.am : ["n", "n", "n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
   school.save((err, doc) => {
     if (!err) {
       res.redirect(`/${doc._id}`);
     } else {
       if (err.name == "ValidationError") {
+        console.log(req.body);
         handleValidationError(err, req.body);
         res.render("events/addEdit", {
           fields: req.body,
@@ -117,6 +132,21 @@ function handleValidationError(err, body) {
       case "quizPart":
         body["quizPartError"] = err.errors[field].message;
         break;
+      case "surpPart":
+        body["surpPartError"] = err.errors[field].message;
+        break;
+      case "filmPart":
+        body["filmPartError"] = err.errors[field].message;
+        break;
+      case "photoPart":
+        body["photoPartError"] = err.errors[field].message;
+        break;
+      case "arduPart":
+        body["arduPartError"] = err.errors[field].message;
+        break;
+      case "amPart":
+        body["amPartError"] = err.errors[field].message;
+        break;
       case "submittedEvents":
         body["zeroEventsError"] = err.errors[field].message;
         break;
@@ -138,3 +168,4 @@ router.get("/:id", (req, res) => {
 });
 
 module.exports = router;
+//todo:change pw

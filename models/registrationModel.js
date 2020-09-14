@@ -50,6 +50,36 @@ var schoolSchema = new mongoose.Schema({
       type: String,
     },
   ],
+  coinPart: [
+    {
+      type: String,
+    },
+  ],
+  surpPart: [
+    {
+      type: String,
+    },
+  ],
+  filmPart: [
+    {
+      type: String,
+    },
+  ],
+  photoPart: [
+    {
+      type: String,
+    },
+  ],
+  arduPart: [
+    {
+      type: String,
+    },
+  ],
+  amPart: [
+    {
+      type: String,
+    },
+  ],
   submittedEvents: [
     {
       type: String,
@@ -57,67 +87,6 @@ var schoolSchema = new mongoose.Schema({
   ],
 });
 
-schoolSchema.path("submittedEvents").validate((list) => {
-  return list[0] !== undefined;
-}, "Please Register for atleast one event");
-
-schoolSchema.path("gamePart").validate((list) => {
-  list[0] = list[0].trim();
-  list[1] = list[1].trim();
-  list[2] = list[2].trim();
-  list[3] = list[3].trim();
-  if (list[2] === "") {
-    return list[0] !== "" && list[1] !== "";
-  } else if (list[2] !== "") {
-    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "";
-  }
-}, "Please Provide participant details or leave empty");
-
-schoolSchema.path("crinPart").validate((list) => {
-  list[0] = list[0].trim();
-  list[1] = list[1].trim();
-  list[2] = list[2].trim();
-  list[3] = list[3].trim();
-  list[4] = list[4].trim();
-  list[5] = list[5].trim();
-  if (list[2] === "") {
-    return list[0] !== "" && list[1] !== "";
-  }
-  if (list[4] === "") {
-    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "";
-  }
-  if (list[4] !== "") {
-    return (
-      list[0] !== "" &&
-      list[1] !== "" &&
-      list[2] !== "" &&
-      list[3] !== "" &&
-      list[4] !== "" &&
-      list[5] !== ""
-    );
-  }
-}, "Please Provide participant details or leave empty");
-
-schoolSchema.path("ppPart").validate((list) => {
-  list[0] = list[0].trim();
-  list[1] = list[1].trim();
-  list[2] = list[2].trim();
-  list[3] = list[3].trim();
-  if (list[1] === "") {
-    return list[0] !== "";
-  }
-  if (list[2] === "") {
-    return list[0] !== "" && list[1] !== "";
-  } else if (list[2] !== "") {
-    return list[0] !== "" && list[1] !== "" && list[2] !== "" && list[3] !== "";
-  }
-}, "Please Provide participant details or leave empty");
-
-schoolSchema.path("quizPart").validate((list) => {
-  list[0] = list[0].trim();
-  list[1] = list[1].trim();
-  return list[0] !== "" && list[1] !== "";
-}, "Please Register atleast two participants for quiz.");
 
 schoolSchema.path("teacherEmail").validate((val) => {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

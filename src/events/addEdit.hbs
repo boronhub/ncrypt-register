@@ -63,14 +63,39 @@
         <input type="checkbox" name="events" value="game" {{#if check.gameChecked}}checked{{/if}}>
         <p> Gaming</p>
       </div>
-      <div class="dabba">
+      <div class="dabba quizbox">
         <input type="checkbox" name="events" value="quiz" {{#if check.quizChecked}}checked{{/if}}>
         <p> Quiz</p>
       </div>
-      <div class="dabba">
+      <div class="dabba coinbox">
         <input type="checkbox" name="events" value="coin" {{#if check.coinChecked}}checked{{/if}}>
 
-        <p> Code-in </p>
+        <p> Crossword </p>
+      </div>
+      <div class="dabba surpbox">
+        <input type="checkbox" name="events" value="surp" {{#if check.surpChecked}}checked{{/if}}>
+
+        <p> Surprise </p>
+      </div>
+      <div class="dabba filmbox">
+        <input type="checkbox" name="events" value="film" {{#if check.filmChecked}}checked{{/if}}>
+
+        <p> Filmmaking </p>
+      </div>
+      <div class="dabba photobox">
+        <input type="checkbox" name="events" value="photo" {{#if check.photoChecked}}checked{{/if}}>
+
+        <p> Photography </p>
+      </div>
+      <div class="dabba ardubox">
+        <input type="checkbox" name="events" value="ardu" {{#if check.arduChecked}}checked{{/if}}>
+
+        <p> Arduino </p>
+      </div>
+      <div class="dabba ambox">
+        <input type="checkbox" name="events" value="am" {{#if check.amChecked}}checked{{/if}}>
+
+        <p> Audio Mixing </p>
       </div>
     </div>
 
@@ -116,8 +141,7 @@
       </p>
       {{/if}}{{/if}}
     </div>
-    <div class="prog selectt"
-      style="{{#if check.ppChecked}}display:block{{else}}display:none{{/if}};transform:translateY(15%)">
+    <div class="prog selectt" style="{{#if check.ppChecked}}display:block{{else}}display:none{{/if}}">
       <div class="head">
         <h1>Programming</h1>
         <h2>Classes IX-XII</h2>
@@ -126,21 +150,21 @@
         <div class="twoinpp">
           <div class="firstt">
             <p>Participant 1</p>
-            <input type="text" name="crin" value="{{fields.pp.[0]}}">
+            <input type="text" name="prog" value="{{fields.pp.[0]}}">
           </div>
           <div class="secondd">
             <p>Class</p>
-            <input maxlength="4" type="text" name="crin" value="{{fields.pp.[1]}}">
+            <input maxlength="4" type="text" name="prog" value="{{fields.pp.[1]}}">
           </div>
         </div>
         <div class="twoinpp">
           <div class="firstt">
             <p>Participant 2</p>
-            <input type="text" name="crin" value="{{fields.pp.[2]}}">
+            <input type="text" name="prog" value="{{fields.pp.[2]}}">
           </div>
           <div class="secondd">
             <p>Class</p>
-            <input type="text" name="crin" value="{{fields.pp.[3]}}">
+            <input type="text" name="prog" value="{{fields.pp.[3]}}">
           </div>
         </div>
       </div>
@@ -150,8 +174,7 @@
       {{/if}}{{/if}}
     </div>
 
-    <div class="game selectt"
-      style="{{#if check.gameChecked}}display:block{{else}}display:none{{/if}};transform:translateY(45%)">
+    <div class="game selectt" style="{{#if check.gameChecked}}display:block{{else}}display:none{{/if}}">
       <div class="head">
         <h1>Gaming</h1>
         <h2>Classes IX-XII</h2>
@@ -183,14 +206,226 @@
       </p>
       {{/if}}{{/if}}
     </div>
+    <div class="quiz selectt" style="{{#if check.quizChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Quiz</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="quiz" value="{{fields.quiz.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="quiz" value="{{fields.quiz.[1]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.quizChecked}}{{#if fields.quizPartError}}<p style="color:red" class="error">
+        {{fields.quizPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+
     <div class="coin selectt" style="{{#if check.coinChecked}}display:block{{else}}display:none{{/if}}">
-      <input type="text" name="coin" value="{{fields.coin.[0]}}">
-      <input type="text" name="coin" value="{{fields.coin.[1]}}">
+      <div class="head">
+        <h1>Crossword</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="coin" value="{{fields.coin.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="coin" value="{{fields.coin.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="coin" value="{{fields.coin.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="coin" value="{{fields.coin.[3]}}">
+          </div>
+        </div>
+      </div>
       {{#if check.coinChecked}}{{#if fields.coinPartError}}<p style="color:red" class="error">
         {{fields.coinPartError}}
       </p>
       {{/if}}{{/if}}
     </div>
+
+    <div class="surp selectt" style="{{#if check.surpChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Surprise</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="surp" value="{{fields.surp.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="surp" value="{{fields.surp.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="surp" value="{{fields.surp.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="surp" value="{{fields.surp.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.surpChecked}}{{#if fields.surpPartError}}<p style="color:red" class="error">
+        {{fields.surpPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+
+    <div class="film selectt" style="{{#if check.filmChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Filmmaking</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="film" value="{{fields.film.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="film" value="{{fields.film.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="film" value="{{fields.film.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="film" value="{{fields.film.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.filmChecked}}{{#if fields.filmPartError}}<p style="color:red" class="error">
+        {{fields.filmPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+
+    <div class="photo selectt" style="{{#if check.photoChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Photography</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="photo" value="{{fields.photo.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="photo" value="{{fields.photo.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="photo" value="{{fields.photo.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="photo" value="{{fields.photo.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.photoChecked}}{{#if fields.photoPartError}}<p style="color:red" class="error">
+        {{fields.photoPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+    <div class="ardu selectt" style="{{#if check.arduChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Arduino</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="ardu" value="{{fields.photo.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="ardu" value="{{fields.ardu.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="ardu" value="{{fields.ardu.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="ardu" value="{{fields.ardu.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.arduChecked}}{{#if fields.arduPartError}}<p style="color:red" class="error">
+        {{fields.arduPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+
+    <div class="am selectt" style="{{#if check.amChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Photography</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="am" value="{{fields.am.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="am" value="{{fields.am.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="am" value="{{fields.am.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="am" value="{{fields.am.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.amChecked}}{{#if fields.amPartError}}<p style="color:red" class="error">
+        {{fields.amPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
+
     <button type="submit">Submit</button>
   </form>
 </div>
