@@ -126,6 +126,21 @@ p {
   width: 10%;
   float: right;
 }
+.twoinp .first,
+.twoinp .second {
+  display: inline-block;
+  width: 48%;
+}
+.str {
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.threeinp .thirdp {
+  float: right;
+  flex: 0 0 10%;
+}
 .second {
   float: right;
 }
@@ -275,6 +290,14 @@ button {
   .selectt {
     width: 100%;
     margin: 0px;
+  }
+  .str {
+    display: block;
+  }
+  .dabba p {
+    margin-top: 35px;
+    font-size: 4vw;
+    transform: translateY(-50%);
   }
   .container {
     margin: 5% 12% 10% 5%;

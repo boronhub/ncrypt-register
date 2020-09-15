@@ -53,7 +53,7 @@ function insertRecord(req, res) {
       ? req.body.crin
       : ["n", "n", "n", "n", "n", "n"];
   school.ppPart =
-    allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n"];
+    allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n","n","n"];
   school.gamePart =
     allEvents.gameChecked == true ? req.body.game : ["n", "n", "n", "n"];
   school.surpPart =
