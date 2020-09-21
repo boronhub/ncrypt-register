@@ -55,7 +55,7 @@ function insertRecord(req, res) {
       ? req.body.crin
       : ["n", "n", "n", "n", "n", "n"];
   school.ppPart =
-    allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n","n","n"];
+    allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n", "n", "n"];
   school.gamePart =
     allEvents.gameChecked == true ? req.body.game : ["n", "n", "n", "n"];
   school.surpPart =
@@ -69,13 +69,14 @@ function insertRecord(req, res) {
   school.amPart =
     allEvents.amChecked == true ? req.body.am : ["n", "n", "n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
-  school.gdPart = allEvents.gdChecked == true ? req.body.gd : ["n", "n","n","n"];
+  school.gdPart =
+    allEvents.gdChecked == true ? req.body.gd : ["n", "n", "n", "n"];
   school.save((err, doc) => {
     if (!err) {
       res.redirect(`/${doc._id}`);
     } else {
       if (err.name == "ValidationError") {
-        console.log(req.body);  
+        console.log(req.body);
         handleValidationError(err, req.body);
         res.render("events/addEdit", {
           fields: req.body,
