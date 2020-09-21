@@ -14,5 +14,5 @@ try {
   );
   mongoose.set("useCreateIndex", true);
 } catch (error) {
-  console.log("could not connect");
+  console.log(error);
 }
