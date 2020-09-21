@@ -320,3 +320,47 @@ button {
     margin-left: 0px;
   }
 }
+td {
+  padding: 24px;
+  font-family: red hat display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+  background-color: #101010;
+  border-bottom: 2px solid #1f1f1f;
+  text-align: justify;
+}
+td .chaar {
+  display: inline-block;
+  width: 24%;
+  margin: 0px;
+  text-align: center;
+}
+td .do {
+  display: inline-block;
+  width: 49%;
+  margin: 0px;
+  text-align: center;
+}
+tr {
+  text-align: center;
+}
+table {
+  color: #fff;
+  width: 100%;
+  border: none;
+  border-spacing: 0;
+}
+th {
+  padding: 24px;
+  font-family: red hat display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+  background-color: #101010;
+  border-bottom: 2px solid #1f1f1f;
+}

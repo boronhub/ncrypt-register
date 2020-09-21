@@ -53,7 +53,7 @@
     <div class="row">
       <div class="dabba crinbox">
         <input type="checkbox" name="events" value="crin" {{#if check.crinChecked}}checked{{/if}}>
-        <p> Create-in </p>
+        <p> Creative</p>
       </div>
 
       <div class="dabba ppbox">
@@ -107,7 +107,7 @@
 
     <div class="crin selectt" style="{{#if check.crinChecked}}display:block{{else}}display:none{{/if}}">
       <div class="head">
-        <h1>Create-in</h1>
+        <h1>Creative</h1>
         <h2>Classes IX-XII</h2>
       </div>
       <div class="inps">
@@ -139,6 +139,16 @@
           <div class="secondd">
             <p>Class</p>
             <input type="text" name="crin" value="{{fields.crin.[5]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 4</p>
+            <input type="text" name="crin" value="{{fields.crin.[6]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="crin" value="{{fields.crin.[7]}}">
           </div>
         </div>
       </div>
@@ -210,16 +220,6 @@
             <input maxlength="4" type="text" name="game" value="{{fields.game.[1]}}">
           </div>
         </div>
-        <div class="twoinpp">
-          <div class="firstt">
-            <p>Participant 2</p>
-            <input type="text" name="game" value="{{fields.game.[2]}}">
-          </div>
-          <div class="secondd">
-            <p>Class</p>
-            <input type="text" name="game" value="{{fields.game.[3]}}">
-          </div>
-        </div>
       </div>
       {{#if check.gameChecked}}{{#if fields.gamePartError}}<p style="color:red" class="error">
         {{fields.gamePartError}}
@@ -234,12 +234,42 @@
       <div class="inps">
         <div class="twoinpp">
           <div class="firstt">
-            <p>Participant 1</p>
+            <p> Team 1 - Participant 1</p>
             <input type="text" name="quiz" value="{{fields.quiz.[0]}}">
           </div>
           <div class="secondd">
             <p>Class</p>
             <input maxlength="4" type="text" name="quiz" value="{{fields.quiz.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p> Team 1 - Participant 2</p>
+            <input type="text" name="quiz" value="{{fields.quiz.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="quiz" value="{{fields.quiz.[3]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p> Team 2 - Participant 1</p>
+            <input type="text" name="quiz" value="{{fields.quiz.[4]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="quiz" value="{{fields.quiz.[5]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p> Team 2 - Participant 2</p>
+            <input type="text" name="quiz" value="{{fields.quiz.[6]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="quiz" value="{{fields.quiz.[7]}}">
           </div>
         </div>
       </div>
@@ -257,7 +287,7 @@
       <div class="inps">
         <div class="twoinpp">
           <div class="firstt">
-            <p>Participant 1</p>
+            <p>Team 1 - Participant 1</p>
             <input type="text" name="coin" value="{{fields.coin.[0]}}">
           </div>
           <div class="secondd">
@@ -267,12 +297,32 @@
         </div>
         <div class="twoinpp">
           <div class="firstt">
-            <p>Participant 2</p>
+            <p>Team 1 - Participant 2</p>
             <input type="text" name="coin" value="{{fields.coin.[2]}}">
           </div>
           <div class="secondd">
             <p>Class</p>
             <input type="text" name="coin" value="{{fields.coin.[3]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Team 2 - Participant 1</p>
+            <input type="text" name="coin" value="{{fields.coin.[4]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="coin" value="{{fields.coin.[5]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Team 2 - Participant 2</p>
+            <input type="text" name="coin" value="{{fields.coin.[6]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="coin" value="{{fields.coin.[7]}}">
           </div>
         </div>
       </div>
@@ -364,16 +414,6 @@
             <input maxlength="4" type="text" name="photo" value="{{fields.photo.[1]}}">
           </div>
         </div>
-        <div class="twoinpp">
-          <div class="firstt">
-            <p>Participant 2</p>
-            <input type="text" name="photo" value="{{fields.photo.[2]}}">
-          </div>
-          <div class="secondd">
-            <p>Class</p>
-            <input type="text" name="photo" value="{{fields.photo.[3]}}">
-          </div>
-        </div>
       </div>
       {{#if check.photoChecked}}{{#if fields.photoPartError}}<p style="color:red" class="error">
         {{fields.photoPartError}}
@@ -383,13 +423,13 @@
     <div class="ardu selectt" style="{{#if check.arduChecked}}display:block{{else}}display:none{{/if}}">
       <div class="head">
         <h1>Arduino</h1>
-        <h2>Classes IX-XII</h2>
+        <h2>Classes VI-VIII</h2>
       </div>
       <div class="inps">
         <div class="twoinpp">
           <div class="firstt">
             <p>Participant 1</p>
-            <input type="text" name="ardu" value="{{fields.photo.[0]}}">
+            <input type="text" name="ardu" value="{{fields.ardu.[0]}}">
           </div>
           <div class="secondd">
             <p>Class</p>
@@ -427,16 +467,6 @@
           <div class="secondd">
             <p>Class</p>
             <input maxlength="4" type="text" name="am" value="{{fields.am.[1]}}">
-          </div>
-        </div>
-        <div class="twoinpp">
-          <div class="firstt">
-            <p>Participant 2</p>
-            <input type="text" name="am" value="{{fields.am.[2]}}">
-          </div>
-          <div class="secondd">
-            <p>Class</p>
-            <input type="text" name="am" value="{{fields.am.[3]}}">
           </div>
         </div>
       </div>

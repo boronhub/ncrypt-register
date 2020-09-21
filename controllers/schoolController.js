@@ -60,26 +60,30 @@ function insertRecord(req, res) {
     }
   });
   school.submittedEvents = submittedEvents;
-  school.coinPart = allEvents.coinChecked == true ? req.body.coin : ["n", "n"];
+  school.coinPart =
+    allEvents.coinChecked == true
+      ? req.body.coin
+      : ["n", "n", "n", "n", "n", "n", "n", "n"];
   school.crinPart =
     allEvents.crinChecked == true
       ? req.body.crin
-      : ["n", "n", "n", "n", "n", "n"];
+      : ["n", "n", "n", "n", "n", "n", "n", "n"];
   school.ppPart =
     allEvents.ppChecked == true ? req.body.pp : ["n", "n", "n", "n", "n", "n"];
-  school.gamePart =
-    allEvents.gameChecked == true ? req.body.game : ["n", "n", "n", "n"];
+  school.gamePart = allEvents.gameChecked == true ? req.body.game : ["n", "n"];
   school.surpPart =
     allEvents.surpChecked == true ? req.body.surp : ["n", "n", "n", "n"];
   school.filmPart =
     allEvents.filmChecked == true ? req.body.film : ["n", "n", "n", "n"];
   school.photoPart =
-    allEvents.photoChecked == true ? req.body.photo : ["n", "n", "n", "n"];
+    allEvents.photoChecked == true ? req.body.photo : ["n", "n"];
   school.arduPart =
     allEvents.arduChecked == true ? req.body.ardu : ["n", "n", "n", "n"];
-  school.amPart =
-    allEvents.amChecked == true ? req.body.am : ["n", "n", "n", "n"];
-  school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
+  school.amPart = allEvents.amChecked == true ? req.body.am : ["n", "n"];
+  school.quizPart =
+    allEvents.quizChecked == true
+      ? req.body.quiz
+      : ["n", "n", "n", "n", "n", "n", "n", "n"];
   school.gdPart =
     allEvents.gdChecked == true ? req.body.gd : ["n", "n", "n", "n"];
   school.save((err, doc) => {
