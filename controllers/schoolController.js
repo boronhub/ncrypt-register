@@ -2,14 +2,25 @@ const express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
 const School = mongoose.model("School");
+const { body } = require("express-validator");
 
 router.get("/", (req, res) => {
   res.render("events/addEdit");
 });
 
-router.post("/", (req, res) => {
-  insertRecord(req, res);
-});
+router.post(
+  "/",
+  [
+    body("schoolName").not().isEmpty().escape().trim(),
+    body("teacherName").not().isEmpty().escape().trim(),
+    body("studentName").not().isEmpty().escape().trim(),
+    body("teacherEmail").not().isEmpty().escape().trim().normalizeEmail(),
+    body("studentEmail").not().isEmpty().escape().trim().normalizeEmail(),
+  ],
+  (req, res) => {
+    insertRecord(req, res);
+  }
+);
 
 function insertRecord(req, res) {
   var school = new School();
