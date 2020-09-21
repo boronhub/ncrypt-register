@@ -66,7 +66,7 @@ h1 {
   font-family: "Red Hat Display", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 40px;
   line-height: 87px;
 
   color: #ffffff;
@@ -180,6 +180,9 @@ input[type="text"] {
   margin-top: 30px !important;
   width: 100%;
   text-align: start;
+}
+h1 {
+  font-size: 40px;
 }
 .dabba {
   position: relative;
