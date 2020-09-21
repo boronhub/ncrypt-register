@@ -58,6 +58,16 @@ $(".ambox").click(function () {
     $(".am").show();
   }
 });
+$(".gdbox").click(function () {
+  var cbox = $('input[value="gd"]');
+  cbox.prop("checked", !cbox.prop("checked"));
+  if (!cbox.prop("checked")) {
+    $(".gd").hide();
+    $('input[name="gd"').attr("value", "");
+  } else if (cbox.prop("checked")) {
+    $(".gd").show();
+  }
+});
 $(".surpbox").click(function () {
   var cbox = $('input[value="surp"]');
   cbox.prop("checked", !cbox.prop("checked"));

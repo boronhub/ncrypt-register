@@ -1,8 +1,9 @@
 <img src="/img/logo.png" alt="Logo" height="50" width="150">
 <div class="container">
   <h1>Register</h1>
-  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices consectetur lobortis id sit <a
-      href="https://ncrypt.net.in">events</a> .<br>
+  <h2>nCrypt's annual tech symposium is back for 2020 and promises to be bigger and better than ever. Take a look at our
+    13
+    new and exciting <a href="https://ncrypt.net.in">events</a> .<br>
     Last date of registration is 12th August 2020</h2>
   <h3>{{oyehoye}}</h3>
   <h3>{{fields.zeroEventsError}}</h3>
@@ -96,6 +97,11 @@
         <input type="checkbox" name="events" value="am" {{#if check.amChecked}}checked{{/if}}>
 
         <p> Audio Mixing </p>
+      </div>
+      <div class="dabba gdbox">
+        <input type="checkbox" name="events" value="gd" {{#if check.gdChecked}}checked{{/if}}>
+
+        <p> Group Discussion </p>
       </div>
     </div>
 
@@ -439,7 +445,38 @@
       </p>
       {{/if}}{{/if}}
     </div>
-
+    <div class="gd selectt" style="{{#if check.gdChecked}}display:block{{else}}display:none{{/if}}">
+      <div class="head">
+        <h1>Group Discussion</h1>
+        <h2>Classes IX-XII</h2>
+      </div>
+      <div class="inps">
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 1</p>
+            <input type="text" name="gd" value="{{fields.gd.[0]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input maxlength="4" type="text" name="gd" value="{{fields.gd.[1]}}">
+          </div>
+        </div>
+        <div class="twoinpp">
+          <div class="firstt">
+            <p>Participant 2</p>
+            <input type="text" name="gd" value="{{fields.gd.[2]}}">
+          </div>
+          <div class="secondd">
+            <p>Class</p>
+            <input type="text" name="gd" value="{{fields.gd.[3]}}">
+          </div>
+        </div>
+      </div>
+      {{#if check.gdChecked}}{{#if fields.gdPartError}}<p style="color:red" class="error">
+        {{fields.gdPartError}}
+      </p>
+      {{/if}}{{/if}}
+    </div>
     <button type="submit">Submit</button>
   </form>
 </div>

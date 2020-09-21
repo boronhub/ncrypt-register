@@ -44,6 +44,8 @@ function insertRecord(req, res) {
       allEvents.arduChecked = true;
     } else if (element === "am") {
       allEvents.amChecked = true;
+    } else if (element === "gd") {
+      allEvents.gdChecked = true;
     }
   });
   school.submittedEvents = submittedEvents;
@@ -67,6 +69,7 @@ function insertRecord(req, res) {
   school.amPart =
     allEvents.amChecked == true ? req.body.am : ["n", "n", "n", "n"];
   school.quizPart = allEvents.quizChecked == true ? req.body.quiz : ["n", "n"];
+  school.gdPart = allEvents.gdChecked == true ? req.body.gd : ["n", "n","n","n"];
   school.save((err, doc) => {
     if (!err) {
       res.redirect(`/${doc._id}`);
@@ -146,6 +149,9 @@ function handleValidationError(err, body) {
         break;
       case "amPart":
         body["amPartError"] = err.errors[field].message;
+        break;
+      case "gdPart":
+        body["gdPartError"] = err.errors[field].message;
         break;
       case "submittedEvents":
         body["zeroEventsError"] = err.errors[field].message;
